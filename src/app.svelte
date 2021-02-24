@@ -11,14 +11,11 @@
   <title>{titleIcon} Custom title</title>
 </svelte:head>
 
-<h1 class="bg-gray-200">Demo</h1>
-<button on:click={handleClick}>
-  Clicked {count}
-  {count === 1 ? "time" : "times"}
-</button>
+<div class="container max-w-2xl mx-auto px-3 md:px-5">
+  <h1 class="text-5xl mt-6 sm:mt-12 md:mt-24">Demo</h1>
 
-<style>
-  h1 {
-    border: 1px solid #000;
-  }
-</style>
+  <button class="text-base" on:click={handleClick}>
+    Clicked {count}
+    {count === 1 ? "time" : "times"}
+  </button>
+</div>

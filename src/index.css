@@ -1,15 +1,7 @@
 @import "@ymatuhin/ui/index.css";
 
-html,
-body {
-  height: 100%;
-}
-
-#app {
-  height: 100%;
-  text-align: center;
-  background-color: rgb(103, 58, 184);
-  color: rgb(255, 255, 255);
-  font-size: 1.5em;
-  padding-top: 100px;
+html {
+  background: #fff9ef;
+  border-top-width: 10px;
+  @apply border-primary;
 }
