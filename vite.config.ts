@@ -11,7 +11,8 @@ export default defineConfig({
   esbuild: {},
   plugins: [
     svelte({
-      preprocess: sveltePreprocess(),
+      preprocess: sveltePreprocess({ postcss: true }),
+      emitCss: false,
       compilerOptions: {
         hydratable: isProd,
         dev: !isProd,
