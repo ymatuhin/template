@@ -1,15 +1,22 @@
 import { defineConfig } from "vite";
-import legacy from "@vitejs/plugin-legacy";
-import preactRefresh from "@prefresh/vite";
+import svelte from "rollup-plugin-svelte";
 
-const legacyPlugin = process.env.BUILD_SERVER ? undefined : legacy();
+import sveltePreprocess from "svelte-preprocess";
+import legacy from "@vitejs/plugin-legacy";
+
+const isProd = process.env.NODE_ENV === "production";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  esbuild: {
-    jsxFactory: "h",
-    jsxFragment: "Fragment",
-    jsxInject: `import { h, Fragment } from 'preact'`,
-  },
-  plugins: [preactRefresh(), legacyPlugin].filter(Boolean),
+  esbuild: {},
+  plugins: [
+    svelte({
+      preprocess: sveltePreprocess(),
+      compilerOptions: {
+        hydratable: isProd,
+        dev: !isProd,
+      },
+    }),
+    legacy(),
+  ].filter(Boolean),
 });

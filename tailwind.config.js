@@ -1,7 +1,7 @@
 module.exports = {
   purge: {
     preserveHtmlElements: false,
-    content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+    content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx,svelte}"],
     options: {
       keyframes: true,
       variables: true,
