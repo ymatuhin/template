@@ -2,6 +2,4 @@
 
 html {
   background: #fff9ef;
-  border-top-width: 10px;
-  @apply border-primary;
 }
