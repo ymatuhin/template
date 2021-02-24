@@ -1,5 +1,6 @@
 <script lang="ts">
   let count = 0;
+  let titleIcon = process.env.NODE_ENV === "development" ? "🚧" : "";
 
   function handleClick() {
     count += 1;
@@ -7,17 +8,17 @@
 </script>
 
 <svelte:head>
-  <title>{"Custom title <3"}</title>
+  <title>{titleIcon} Custom title</title>
 </svelte:head>
 
-<h1>Demo</h1>
+<h1 class="bg-gray-200">Demo</h1>
 <button on:click={handleClick}>
   Clicked {count}
   {count === 1 ? "time" : "times"}
 </button>
 
-<style lang="postcss">
+<style>
   h1 {
-    @apply text-5xl font-semibold;
+    border: 1px solid #000;
   }
 </style>
