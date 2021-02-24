@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+  text-align: center;
+  background-color: rgb(103, 58, 184);
+  color: rgb(255, 255, 255);
+  font-size: 1.5em;
+  padding-top: 100px;
+}
